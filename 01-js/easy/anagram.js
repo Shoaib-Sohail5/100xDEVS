@@ -5,6 +5,24 @@
 */
 
 function isAnagram(str1, str2) {
+  if(str1.length !== str2.length) {
+    return false;
+  } 
+
+  str1 = str1.toLowerCase();
+  str2 = str2.toLowerCase();
+  
+  let sortedStr1 = str1.split('').sort().join('');
+  let sortedStr2 = str2.split('').sort().join('');
+
+  for(i = 0;i < sortedStr1.length; i++) {
+    if(sortedStr1[i] === sortedStr2[i]) {continue;}
+    else {
+      return false;
+    }
+  }
+  return true;
+
 
 }
 
